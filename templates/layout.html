@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <!-- Default information -->
@@ -15,13 +15,28 @@
         <link rel="stylesheet" href="../static/styling.min.css" />
     </head>
     <body>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                    {% for category, message in messages %}
+                        <div uk-alert class="uk-{{ category }} uk-text-center uk-margin-remove" role="alert">
+                            {{ message }} <a class="uk-alert-close" uk-close></a>
+                        </div>
+                    {% endfor %}
+            {% endif %}
+        {% endwith %}
+
         <nav class="uk-navbar-container" uk-navbar>
-            <div class="uk-navbar-center">
-                <div class="uk-navbar-center-left"><div>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li><a class="uk-navbar-toggle-icon uk-icon uk-hidden@s" uk-navbar-toggle-icon href="#"></a></li>
+                </ul>
+            </div>
+            <div class="nav-overlay uk-navbar-center">
+                <div class="uk-navbar-center-left uk-visible@s"><div>
                     <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li class="uk-active uk-button uk-button-text"><a href="#">Active</a></li>
                         <li>
-                            <a href="#">Parent</a>
+                            <a class="uk-button uk-button-text" href="#">Parent</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li class="uk-active"><a href="#">Active</a></li>
@@ -32,12 +47,44 @@
                         </li>
                     </ul>
                 </div></div>
-                <a class="uk-navbar-item uk-logo" href="{{ url_for("index") }}">book50</a>
-                <div class="uk-navbar-center-right"><div>
+                <a class="uk-navbar-item uk-logo" href="#">books50web</a>
+                <div class="uk-navbar-center-right uk-visible@s"><div>
                     <ul class="uk-navbar-nav">
-                        <li><a href="#">Item</a></li>
+                        <li><a class="uk-button uk-button-text" href="#">API</a></li>
                     </ul>
                 </div></div>
+            </div>
+            <div class="nav-overlay uk-navbar-right"><div>
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a class="uk-navbar-toggle" uk-search-icon uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+                    </li>
+                    <a href="#">
+                        <div class="uk-navbar-item uk-visible@s">
+                            <img src="../static/userPictures/defaultGuest.svg" width="40px" height="40px" alt="Guest image"><a class="uk-margin-small-left uk-button uk-button-text">Guest <span uk-icon="icon: chevron-down"></span></a>
+                        </div>
+                    </a>
+                    <div uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li class="uk-active"><a href="#">Active</a></li>
+                            <li><a href="#">Item</a></li>
+                            <li class="uk-nav-header">Header</li>
+                            <li><a href="#">Item</a></li>
+                            <li><a href="#">Item</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="#">Item</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div></div>
+
+            <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+                <div class="uk-navbar-item uk-width-expand">
+                    <form class="uk-search uk-search-navbar uk-width-1-1">
+                        <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
+                    </form>
+                </div>
+                <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
             </div>
         </nav>
         <header>

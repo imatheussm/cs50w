@@ -1,1 +1,31 @@
-﻿
+﻿.uk-navbar-container:not(.uk-navbar-transparent) {
+  background: #424B54 !important; }
+
+.uk-navbar-item.uk-logo {
+  color: #F6F5AE; }
+
+.uk-navbar-nav > li > a, .uk-navbar-nav > div > a {
+  color: #C5C7C4; }
+
+.uk-navbar-nav > li > a:hover, .uk-navbar-nav > li.uk-active > a, .uk-navbar-nav > div > a:hover, .uk-navbar-nav > li > a:focus, .uk-navbar-nav > li > a:active, .uk-navbar-nav > li > a.uk-open:visited, .uk-navbar-nav > div > a:focus, .uk-navbar-nav > div > a:active, .uk-navbar-nav > div > a:visited {
+  color: #F0F2EF; }
+
+.uk-navbar-nav > li > a:hover::before {
+  left: 15px;
+  right: 15px;
+  bottom: 20px;
+  height: 1px;
+  background-color: currentColor; }
+
+.uk-navbar-nav > div > a:hover::before {
+  bottom: 20px;
+  height: 1px;
+  background-color: currentColor;
+  right: 3px;
+  transition: right .3s ease-out; }
+
+.uk-navbar-nav > div > a {
+  display: flex;
+  min-height: 80px;
+  justify-content: center;
+  align-items: center; }
