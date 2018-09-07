@@ -11,8 +11,10 @@
         <!-- UIkit JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.14/js/uikit.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.14/js/uikit-icons.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- project1 CSS -->
         <link rel="stylesheet" href="../static/styling.min.css" />
+        {% block head %}{% endblock %}
     </head>
     <body>
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -64,15 +66,28 @@
                             <img src="../static/userPictures/defaultGuest.svg" width="40px" height="40px" alt="Guest image"><a class="uk-margin-small-left uk-button uk-button-text">Guest <span uk-icon="icon: chevron-down"></span></a>
                         </div>
                     </a>
-                    <div uk-dropdown="mode: click">
+                    <div uk-dropdown="mode: click" class="uk-width-medium">
+                        <form>
+                            <div class="uk-inline uk-width-1-1 uk-margin-small">
+                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                <input class="uk-input" placeholder="Username">
+                            </div>
+                            <div class="uk-inline uk-width-1-1 uk-margin-small">
+                                <span class="uk-form-icon" id="username" uk-icon="icon: lock"></span>
+                                <input class="uk-input" id="password" data-toggle="password" placeholder="Password" type="password">
+                                <button id="show-password" class="uk-form-icon uk-form-icon-flip" uk-icon><img id="show-password-img" width="20px" height="20px" src="../static/show-password.svg" /><img id="hide-password-img" width="20px" height="20px" src="../static/hide-password.svg" uk-icon /></button>
+                            </div>
+                            <div class="uk-margin-remove" id="remember-me">
+                                <label class="uk-margin-auto">
+                                    <input class="uk-checkbox uk-margin-small-right" type="checkbox"> Remember me
+                                </label>
+                            </div>
+                            <button type="submit" id="submit" class="uk-margin-small uk-button uk-width-1-1 uk-button-primary">Log in</button>
+                        </form>
+                        <hr class="uk-margin-small" />
                         <ul class="uk-nav uk-dropdown-nav">
-                            <li class="uk-active"><a href="#">Active</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li class="uk-nav-header">Header</li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">Item</a></li>
+                            <li class="uk-align-right uk-margin-remove"><a href="#">Forgot your password? <strong>Recover it</strong> <span uk-icon="icon: refresh"></span></a></li>
+                            <li class="uk-align-right uk-margin-remove"><a href="#">Not a user? <strong>Register now</strong> <span uk-icon="icon: sign-in"></a></li>
                         </ul>
                     </div>
                 </ul>
