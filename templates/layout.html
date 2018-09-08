@@ -30,7 +30,7 @@
         <nav class="uk-navbar-container" uk-navbar>
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
-                    <li><a class="uk-navbar-toggle-icon uk-icon uk-hidden@s" uk-navbar-toggle-icon href="#"></a></li>
+                    <li><a uk-toggle="target: #hamburguer-menu" class="uk-navbar-toggle-icon uk-icon uk-hidden@s" uk-navbar-toggle-icon></a></li>
                 </ul>
             </div>
             <div class="nav-overlay uk-navbar-center">
@@ -61,7 +61,7 @@
                     <li>
                         <a class="uk-navbar-toggle" uk-search-icon uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
                     </li>
-                    <a href="#">
+                    <a>
                         <div class="uk-navbar-item uk-visible@s">
                             <img src="../static/userPictures/defaultGuest.svg" width="40px" height="40px" alt="Guest image"><a class="uk-margin-small-left uk-button uk-button-text">Guest <span uk-icon="icon: chevron-down"></span></a>
                         </div>
@@ -70,14 +70,14 @@
                         <form>
                             <div class="uk-inline uk-width-1-1 uk-margin-small">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                <input class="uk-input" placeholder="Username">
+                                <input class="uk-input" id="username" placeholder="Username">
                             </div>
                             <div class="uk-inline uk-width-1-1 uk-margin-small">
-                                <span class="uk-form-icon" id="username" uk-icon="icon: lock"></span>
+                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
                                 <input class="uk-input" id="password" data-toggle="password" placeholder="Password" type="password">
-                                <button id="show-password" class="uk-form-icon uk-form-icon-flip" uk-icon><img id="show-password-img" width="20px" height="20px" src="../static/show-password.svg" /><img id="hide-password-img" width="20px" height="20px" src="../static/hide-password.svg" uk-icon /></button>
+                                <button id="show-password" class="uk-form-icon uk-form-icon-flip" uk-icon><img class="show-password-img" width="20px" height="20px" src="../static/show-password.svg" /><img class="hide-password-img" width="20px" height="20px" src="../static/hide-password.svg" uk-icon /></button>
                             </div>
-                            <div class="uk-margin-remove" id="remember-me">
+                            <div class="uk-margin-remove remember-me">
                                 <label class="uk-margin-auto">
                                     <input class="uk-checkbox uk-margin-small-right" type="checkbox"> Remember me
                                 </label>
@@ -111,5 +111,43 @@
         <footer>
             {% block footer %}{% endblock %}
         </footer>
+        <div class="uk-offcanvas-content">
+            <div id="hamburguer-menu" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar uk-width-large">
+                    <ul uk-accordion class="uk-navbar-nav">
+                        <li class="uk-navbar-item uk-margin-remove" class="uk-accordion-title" uk-toggle="target: #login-accordion">
+                            <img src="../static/userPictures/defaultGuest.svg" width="40px" height="40px" alt="Guest image"><a class="uk-button">Guest <span uk-icon="icon: chevron-down"></span></a>
+                        </li>
+                        <li class="uk-navbar-item uk-margin-remove"><a class="uk-button uk-offcanvas-close" type="button" uk-close></a></li>
+                    </ul>
+                    <div class="uk-accordion-content" hidden id="login-accordion">
+                        <form>
+                            <div class="uk-inline uk-width-1-1 uk-margin-small">
+                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                <input class="uk-input" id="username-hamburguer" placeholder="Username">
+                            </div>
+                            <div class="uk-inline uk-width-1-1 uk-margin-small">
+                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                <input class="uk-input" id="password-hamburguer" data-toggle="password" placeholder="Password" type="password">
+                                <button id="show-password-hamburguer" class="uk-form-icon uk-form-icon-flip" uk-icon><img class="show-password-img" width="20px" height="20px" src="../static/show-password.svg" /><img class="hide-password-img" width="20px" height="20px" src="../static/hide-password.svg" uk-icon /></button>
+                            </div>
+                            <div class="uk-margin-small remember-me">
+                                <label class="uk-margin-auto">
+                                    <input class="uk-checkbox uk-margin-small-right" type="checkbox"> Remember me
+                                </label>
+                            </div>
+                            <button type="submit" id="submit-hamburguer" class="uk-margin-small uk-button uk-width-1-1 uk-button-primary">Log in</button>
+                        </form>
+                        <hr class="uk-margin-small" />
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li class="uk-align-right uk-margin-remove"><a class="uk-margin-small" href="#">Forgot your password? <strong>Recover it</strong> <span uk-icon="icon: refresh"></span></a></li>
+                            <li class="uk-align-right uk-margin-remove"><a class="uk-margin-small" href="#">Not a user? <strong>Register now</strong> <span uk-icon="icon: sign-in"></a></li>
+                        </ul>
+                    </div>
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

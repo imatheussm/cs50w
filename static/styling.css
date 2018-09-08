@@ -41,9 +41,13 @@
   align-items: center;
   color: #999; }
 
-#hide-password-img {
+.show-password-img, .hide-password-img {
+  color: #999;
+  fill: currentColor; }
+
+.hide-password-img {
   display: none; }
 
-#remember-me {
+.remember-me {
   display: flex;
   align-items: center; }
