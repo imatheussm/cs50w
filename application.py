@@ -2,6 +2,7 @@ import os
 
 from flask import Flask, session, render_template, url_for
 from flask_session import Session
+from flask_moment import Moment
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
@@ -15,6 +16,9 @@ if not os.getenv("DATABASE_URL"):
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
+
+# Initialize flask-moment
+moment = Moment(app)
 
 # Set up database
 engine = create_engine(os.getenv("DATABASE_URL"))

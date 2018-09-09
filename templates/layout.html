@@ -14,6 +14,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- project1 CSS -->
         <link rel="stylesheet" href="../static/styling.min.css" />
+
+        <!-- flask-moment required code -->
+        {{ moment.include_jquery() }}
+        {{ moment.include_moment() }}
         {% block head %}{% endblock %}
     </head>
     <body>
@@ -108,7 +112,9 @@
         <main>
             {% block main %}{% endblock %}
         </main>
-        <footer>
+        <footer class="uk-margin-large-top">
+            <hr />
+            <p class="uk-text-center">Copyright 2018-{{ moment().format('YYYY') }} – <a href="https://igormathe.us" class="uk-link-text">igormathe.us</a> – All rights reserved.</p>
             {% block footer %}{% endblock %}
         </footer>
         <div class="uk-offcanvas-content">
