@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="uk-height-1-1">
+<head>
+    <meta charset="utf-8" />
+    <title>books50web: {% block title %}{% endblock %}</title>
+    
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.14/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.14/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.14/js/uikit-icons.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- flask-moment required code -->
+    {{ moment.include_jquery() }}
+    {{ moment.include_moment() }}
+    <!-- project1 forms CSS -->
+    <link rel="stylesheet" href="../static/styling_forms.min.css" />
+    {% block head %}{% endblock %}
+</head>
+<body class="uk-flex uk-flex-center uk-height-1-1 uk-flex-middle">
+    <div class="uk-width-3-4@m">
+        <header class="uk-margin-large uk-text-center">
+            <h1 class="uk-margin-remove"><a href="{{ url_for("index") }}" class="uk-link-heading">books50web</a></h1>
+            <span class="uk-text-lead">Please fill the fields below.</span>
+            {% block header %}{% endblock %}
+        </header>
+        <main class="uk-margin-large-left uk-margin-large uk-margin-large-right">
+            {% block main %}{% endblock %}
+        </main>
+        <hr class="uk-margin-large-left uk-margin-large-right" />
+        <footer class="uk-margin-large uk-text-center">
+            <p class="uk-margin-remove uk-text-center">Copyright 2018-{{ moment().format('YYYY') }} – <a href="https://igormathe.us" class="uk-link-text">igormathe.us</a> – All rights reserved.</p>
+            {% block footer %}{% endblock %}
+        </footer>
+    </div>
+</body>
+</html>

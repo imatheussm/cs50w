@@ -1,0 +1,31 @@
+{% extends "layout_forms.html" %}
+
+{% block title %}a CS50Web project{% endblock %}
+
+{% block head %}
+<script defer src="../static/show_password.js"></script>
+<script defer src="../static/login_validator.js"></script>
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+    
+{% block main %}
+    <form action="{{ url_for("login") }}" method="post">
+        <div class="uk-inline uk-width-1-1 uk-padding-small uk-margin-remove">
+            <span class="uk-form-icon uk-padding-small" uk-icon="icon: user"></span>
+            <input class="uk-input uk-form-large" name="username" id="username" placeholder="Username" type="text">
+        </div>
+        <div class="uk-inline uk-width-1-1 uk-padding-small uk-margin-remove">
+            <span class="uk-form-icon uk-padding-small" uk-icon="icon: lock"></span>
+            <input class="uk-input uk-form-large" name="password" id="password" placeholder="Password" type="password">
+            <button id="show-password" class="uk-form-icon uk-form-icon-flip uk-button-flip" uk-icon><img class="show-password-img" width="20px" height="20px" src="../static/show-password.svg" /><img class="hide-password-img" width="20px" height="20px" src="../static/hide-password.svg" uk-icon /></button>
+        </div>
+        <div class="uk-inline uk-width-1-1 uk-padding-small uk-margin-small-top">
+            <button type="submit" id="submit" class="uk-button uk-button-primary uk-button-large uk-width-1-1" disabled>Submit</button>
+        </div>
+    </form>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -2,5 +2,9 @@
   {
     "outputFile": "static/styling.css",
     "inputFile": "static/styling.scss"
+  },
+  {
+    "outputFile": "static/styling_forms.css",
+    "inputFile": "static/styling_forms.scss"
   }
 ]

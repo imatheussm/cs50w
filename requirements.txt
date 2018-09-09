@@ -1,5 +1,7 @@
 Flask
 Flask-Session
 Flask-Moment
+Flask-Login
 psycopg2
+Request
 SQLAlchemy

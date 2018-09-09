@@ -14,7 +14,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- project1 CSS -->
         <link rel="stylesheet" href="../static/styling.min.css" />
-
         <!-- flask-moment required code -->
         {{ moment.include_jquery() }}
         {{ moment.include_moment() }}
@@ -71,14 +70,14 @@
                         </div>
                     </a>
                     <div uk-dropdown="mode: click" class="uk-width-medium">
-                        <form>
+                        <form method="post" action="{{ url_for("login") }}">
                             <div class="uk-inline uk-width-1-1 uk-margin-small">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                <input class="uk-input" id="username" placeholder="Username">
+                                <input class="uk-input" name="username" id="username" placeholder="Username">
                             </div>
                             <div class="uk-inline uk-width-1-1 uk-margin-small">
                                 <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                                <input class="uk-input" id="password" data-toggle="password" placeholder="Password" type="password">
+                                <input class="uk-input" name="username" id="password" data-toggle="password" placeholder="Password" type="password">
                                 <button id="show-password" class="uk-form-icon uk-form-icon-flip" uk-icon><img class="show-password-img" width="20px" height="20px" src="../static/show-password.svg" /><img class="hide-password-img" width="20px" height="20px" src="../static/hide-password.svg" uk-icon /></button>
                             </div>
                             <div class="uk-margin-remove remember-me">
@@ -86,12 +85,12 @@
                                     <input class="uk-checkbox uk-margin-small-right" type="checkbox"> Remember me
                                 </label>
                             </div>
-                            <button type="submit" id="submit" class="uk-margin-small uk-button uk-width-1-1 uk-button-primary">Log in</button>
+                            <button type="submit" id="submit" class="uk-margin-small uk-button uk-width-1-1 uk-button-primary" disabled>Log in</button>
                         </form>
                         <hr class="uk-margin-small" />
                         <ul class="uk-nav uk-dropdown-nav">
                             <li class="uk-align-right uk-margin-remove"><a href="#">Forgot your password? <strong>Recover it</strong> <span uk-icon="icon: refresh"></span></a></li>
-                            <li class="uk-align-right uk-margin-remove"><a href="#">Not a user? <strong>Register now</strong> <span uk-icon="icon: sign-in"></a></li>
+                            <li class="uk-align-right uk-margin-remove"><a href="#">Not a user? <strong>Register now</strong> <span uk-icon="icon: sign-in"></span></a></li>
                         </ul>
                     </div>
                 </ul>
@@ -120,21 +119,21 @@
         <div class="uk-offcanvas-content">
             <div id="hamburguer-menu" uk-offcanvas="overlay: true">
                 <div class="uk-offcanvas-bar uk-width-large">
-                    <ul uk-accordion class="uk-navbar-nav">
+                    <ul uk-accordion="animation: true" class="uk-navbar-nav">
                         <li class="uk-navbar-item uk-margin-remove" class="uk-accordion-title" uk-toggle="target: #login-accordion">
                             <img src="../static/userPictures/defaultGuest.svg" width="40px" height="40px" alt="Guest image"><a class="uk-button">Guest <span uk-icon="icon: chevron-down"></span></a>
                         </li>
                         <li class="uk-navbar-item uk-margin-remove"><a class="uk-button uk-offcanvas-close" type="button" uk-close></a></li>
                     </ul>
                     <div class="uk-accordion-content" hidden id="login-accordion">
-                        <form>
+                        <form method="post" action="{{ url_for("login") }}">
                             <div class="uk-inline uk-width-1-1 uk-margin-small">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                <input class="uk-input" id="username-hamburguer" placeholder="Username">
+                                <input class="uk-input" name="username" minlength="5" id="username-hamburguer" placeholder="Username">
                             </div>
                             <div class="uk-inline uk-width-1-1 uk-margin-small">
                                 <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                                <input class="uk-input" id="password-hamburguer" data-toggle="password" placeholder="Password" type="password">
+                                <input class="uk-input" name="password" minlength="8" id="password-hamburguer" data-toggle="password" placeholder="Password" type="password">
                                 <button id="show-password-hamburguer" class="uk-form-icon uk-form-icon-flip" uk-icon><img class="show-password-img" width="20px" height="20px" src="../static/show-password.svg" /><img class="hide-password-img" width="20px" height="20px" src="../static/hide-password.svg" uk-icon /></button>
                             </div>
                             <div class="uk-margin-small remember-me">
@@ -142,12 +141,12 @@
                                     <input class="uk-checkbox uk-margin-small-right" type="checkbox"> Remember me
                                 </label>
                             </div>
-                            <button type="submit" id="submit-hamburguer" class="uk-margin-small uk-button uk-width-1-1 uk-button-primary">Log in</button>
+                            <button type="submit" id="submit-hamburguer" class="uk-margin-small uk-button uk-width-1-1 uk-button-primary" disabled>Log in</button>
                         </form>
                         <hr class="uk-margin-small" />
                         <ul class="uk-nav uk-dropdown-nav">
-                            <li class="uk-align-right uk-margin-remove"><a class="uk-margin-small" href="#">Forgot your password? <strong>Recover it</strong> <span uk-icon="icon: refresh"></span></a></li>
-                            <li class="uk-align-right uk-margin-remove"><a class="uk-margin-small" href="#">Not a user? <strong>Register now</strong> <span uk-icon="icon: sign-in"></a></li>
+                            <li class="uk-align-left uk-margin-remove"><a class="uk-margin-small" href="#">Forgot your password? <strong>Recover it</strong> <span uk-icon="icon: refresh"></span></a></li>
+                            <li class="uk-align-left uk-margin-remove"><a class="uk-margin-small" href="#">Not a user? <strong>Register now</strong> <span uk-icon="icon: sign-in"></a></li>
                         </ul>
                     </div>
                     <h3>Title</h3>

@@ -55,3 +55,6 @@
 .uk-section-footer {
   background-color: #424B54;
   color: #C5C7C4; }
+
+.uk-card > .uk-media-top > img {
+  width: 100%; }

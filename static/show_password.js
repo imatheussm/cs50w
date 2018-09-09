@@ -15,6 +15,7 @@ $("#show-password").click(function () {
         // toggle field
         $("#password").attr("type", "password");
     } 
+    return false;
 });
 
 $("#show-password-hamburguer").click(function () {
@@ -34,4 +35,5 @@ $("#show-password-hamburguer").click(function () {
         // toggle field
         $("#password-hamburguer").attr("type", "password");
     } 
+    return false;
 });
