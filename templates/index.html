@@ -9,7 +9,7 @@
 {% block header %}
 <div class="uk-position-relative uk-visible-toggle uk-padding-remove">
     <div uk-slideshow="animation: push; autoplay: true; autoplay-interval: 3000; ratio: 7:3;">
-        <ul class="uk-slideshow-items">
+        <ul class="uk-slideshow-items" uk-height-viewport="offset-bottom: 40">
             <li>
                 <img src="../static/slide1.jpg" alt="Slide 1" uk-cover>
                 <div class="uk-overlay uk-overlay-default uk-position-bottom-right uk-position-small">
@@ -42,7 +42,87 @@
 {% endblock %}
     
 {% block main %}
-
+<div class="uk-section uk-section-muted">
+    <div class="uk-align-center uk-container-medium uk-text-center uk-margin-left uk-margin-right">
+        <h1 class="uk-text-center">Designed with you in mind.</h1>
+        <p class="uk-text-lead uk-margin-top-remove uk-margin-large-bottom">We think web tools are meant to adapt to the user's needs, not the other way around.</p>
+        <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match uk-margin-left uk-margin-right" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-media-top">
+                        <img src="../static/card1.jpg" height="20px" alt="Belém, Pará, Brazil"/>
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">Built in the Amazon.</h3>
+                        <p>The amazonic region is much more than wild animals and undiscovered flora. We are a region with high developemnt potential, and also a source of hard-working individuals who fight for the improvement of the country.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-media-top">
+                        <img src="../static/card2.jpg" alt="Federal University of Pará (Universidade Federal do Pará)"/>
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">Powered by a UFPA student.</h3>
+                        <p>Universidade Federal do Pará (Federal University of Pará, in English) is positioned among the region's most respected public universities. Despite its problems, UFPA has been a knowledge-spreader in a historically poor area.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-media-top">
+                        <img src="../static/card3.jpg" alt="Python snake"/>
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">A Python of possibilities.</h3>
+                        <p>This website has been created through the employment of Python and Flask, with many moduled included to power its functions. It is an example of how dynamically-generated pages should be: simple, straightforward, beautiful.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="uk-section-default uk-container-extend">
+    <div class="uk-inline uk-width-expand">
+        <div class="uk-overlay-primary uk-position-cover"></div>
+        <div class="uk-section uk-padding uk-background-cover"  uk-parallax="bgy: -50" style="background-image: url(../static/parallax1.jpg); height:300px"></div>
+    </div>
+</div>
+<div class="uk-section uk-section-muted">
+    <div class="uk-align-center uk-container-medium uk-text-center uk-margin-large-left uk-margin-large-right">
+        <div class="uk-grid-large uk-grid-match uk-child-width-expand@s" uk-grid>
+            <div>
+                <h2 class="uk-text-center">We have an API!</h2>
+                <p class="">Our implementation follows the instructions provided on <a href="https://docs.cs50.net/web/2018/w/projects/1/project1.html">project1 page</a> of <a href="https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript">CS50's Web Programming with Python and JavaScript</a>, which stipulates that "if users make a GET request to your website’s api <isbn> route, where <isbn> is an ISBN number, your website should return a JSON response containing the book’s title, author, publication date, ISBN number, review count, and average score."</p>
+                <h2 class="uk-text-center">Built with SQLAlchemy!</h2>
+                <p class="">According to <a href="https://docs.cs50.net/web/2018/w/projects/1/project1.html">project1 page</a> of <a href="https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript">CS50's Web Programming with Python and JavaScript</a>, "users will be able to register for" books50web "and then log in using their username and password. Once they log in, they will be able to search for books, leave reviews for individual books, and see the reviews made by other people."</p>
+            </div>
+            <div>
+                <h2>Know more about the author!</h2>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-header">
+                        <div class="uk-grid-small uk-flex-middle" uk-grid>
+                            <div class="uk-width-auto">
+                                <img class="uk-border-circle" width="40" height="40" src="../static/igor.jpg">
+                            </div>
+                            <div class="uk-width-expand">
+                                <h3 class="uk-card-title uk-margin-remove-bottom">Igor Matheus Souza Moreira</h3>
+                                <p class="uk-text-meta uk-margin-remove-top">Born on <time datetime="2016-04-01T19:00">July 16, 1999</time></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-card-body">
+                        <p>A national of Brazil with international experience as a Universidade de Coimbra (Coimbra University) Informatics Engineering student. Currently a Computer Science academic at Universidade Federal do Pará (Federal University of Pará). Possess a C2-Level English certificate issued by CaMLA, and achieved 108/120 points on a TOEFL sitting.</p>
+                    </div>
+                    <div class="uk-card-footer">
+                        <a href="https://www.linkedin.com/in/imatheussm/" class="uk-button uk-button-text">LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block footer %}

@@ -112,9 +112,9 @@
         <main>
             {% block main %}{% endblock %}
         </main>
-        <footer class="uk-margin-large-top">
-            <hr />
-            <p class="uk-text-center">Copyright 2018-{{ moment().format('YYYY') }} – <a href="https://igormathe.us" class="uk-link-text">igormathe.us</a> – All rights reserved.</p>
+        <hr class="uk-margin-remove"/>
+        <footer class="uk-section-footer">
+            <p class="uk-margin-remove uk-padding uk-text-center">Copyright 2018-{{ moment().format('YYYY') }} – <a href="https://igormathe.us" class="uk-link-text">igormathe.us</a> – All rights reserved.</p>
             {% block footer %}{% endblock %}
         </footer>
         <div class="uk-offcanvas-content">

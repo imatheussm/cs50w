@@ -51,3 +51,7 @@
 .remember-me {
   display: flex;
   align-items: center; }
+
+.uk-section-footer {
+  background-color: #424B54;
+  color: #C5C7C4; }
