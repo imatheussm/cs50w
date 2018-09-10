@@ -2,6 +2,7 @@ Flask
 Flask-Session
 Flask-Moment
 Flask-Login
+gunicorn
 psycopg2
 Request
 SQLAlchemy
