@@ -1,0 +1,49 @@
+{% extends "layout_forms.html" %}
+
+{% block title %}a CS50Web project{% endblock %}
+
+{% block head %}
+<script defer src="../static/show_password.js"></script>
+<script defer src="../static/login_validator.js"></script>
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+    
+{% block main %}
+    <form action="{{ url_for("login") }}" method="post">
+        <div uk-grid class="uk-padding-small">
+            <div class="uk-inline uk-width-1-2 uk-margin-remove">
+                <span class="uk-form-icon" uk-icon><img src="../static/id-card.svg" /></span>
+                <input class="uk-input uk-form-large" name="first-name" id="first-name" placeholder="First name" type="text">
+            </div>
+            <div class="uk-inline uk-width-1-2 uk-margin-remove">
+                <span class="uk-form-icon" uk-icon><img src="../static/id-card.svg" /></span>
+                <input class="uk-input uk-form-large" name="last-name" id="last-name" placeholder="Last name" type="text">
+            </div>
+        </div>
+        <div uk-grid class="uk-padding-small">
+            <div class="uk-inline uk-width-1-2 uk-margin-remove">
+                <span class="uk-form-icon uk-padding" uk-icon="icon: user"></span>
+                <input class="uk-input uk-form-large" name="first-name" id="firstName" placeholder="First name" type="text">
+            </div>
+            <div class="uk-inline uk-width-1-2 uk-margin-remove">
+                <span class="uk-form-icon uk-padding" uk-icon="icon: lock"></span>
+                <input class="uk-input uk-form-large" name="password" id="password" placeholder="Password" type="password">
+                <button id="show-password" class="uk-form-icon uk-form-icon-flip uk-button-flip" uk-icon><img class="show-password-img" src="../static/show-password.svg" /><img class="hide-password-img" src="../static/hide-password.svg" uk-icon /></button>
+            </div>
+        </div>
+        <div class="uk-text-center uk-align-center uk-margin-remove">
+            <div class="uk-inline">
+                <label><input class="uk-checkbox" type="checkbox" checked> Remember me</label>
+            </div>
+        </div>
+        <div class="uk-inline uk-width-1-1 uk-padding-small uk-margin-small-top">
+            <button type="submit" id="submit" class="uk-button uk-button-primary uk-button-large uk-width-1-1" disabled>Submit</button>
+        </div>
+    </form>
+    <p class="uk-text-center uk-margin-top">Don't you have an account already? <a href="{{ url_for("register") }}">Register now!</a></p>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -6,7 +6,7 @@
 h1 a{
     color: #f6f5ae!important;
 }
-p, span {
+p, span, label {
     color: #c5c7c4!important;
 }
 
@@ -20,4 +20,10 @@ hr {
 
 .uk-button-flip {
     margin: 15px;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+    color: #999;
 }

@@ -77,9 +77,21 @@ def login():
                         and deals with submitted
                         information on POST.
     """
-    # User did not submit a form
+    
     if request.method == "POST":
         pass
+    # User did not submit a form
     else:
         return render_template("login.html")
 
+@app.route("/register", methods = ["GET", "POST"])
+def register():
+    """
+        Description:    shows register page on GET
+                        and deals with submitted
+                        information on POST.
+    """
+    if request.method == "POST":
+        pass
+    else:
+        return render_template("register.html")
