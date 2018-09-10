@@ -3,6 +3,6 @@ Flask-Session
 Flask-Moment
 Flask-Login
 gunicorn
-psycopg2
+psycopg2-binary
 Request
 SQLAlchemy
