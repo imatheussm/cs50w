@@ -1,11 +1,11 @@
 """
-    Description:    this is a flask application whose purpose is
-                    to be a book search engine, review and API 
-                    provider web application. It is my
-                    implementation for CS50's Web Programming
-                    with Python and JavaScript's project1. It is
-                    my hope that I met all the stipulations and
-                    expectations provided by the project's page.
+    Description:    this is a flask application whose purpose is to be
+                    a book search engine, review and API provider web
+                    application. It is my implementation for CS50's
+                    Web Programming with Python and JavaScript's
+                    project1. It is my hope that I met all the
+                    stipulations and expectations provided by the
+                    project's page.
 
     Project Page:   https://docs.cs50.net/web/2018/w/projects/1/project1.html
 
@@ -53,10 +53,8 @@ login_manager.init_app(app)
 @app.route("/api/<int:isbn>")
 def api(isbn):
     """
-        Description:    API route, where the
-                        stipulated information
-                        shall be returned in a
-                        JSON object.
+        Description:    API route, where the stipulated information shall
+                        be returned in a JSON object.
     """
     pass
 
@@ -64,8 +62,7 @@ def api(isbn):
 @app.route("/")
 def index():
     """
-        Description:    shows default index page
-                        (prior to login)
+        Description:    shows default index page (prior to login).
     """
     return render_template("index.html")
 
@@ -73,8 +70,7 @@ def index():
 @app.route("/login", methods = ["GET", "POST"])
 def login():
     """
-        Description:    shows login page on GET
-                        and deals with submitted
+        Description:    shows login page on GET and deals with submitted
                         information on POST.
     """
     
@@ -84,12 +80,24 @@ def login():
     else:
         return render_template("login.html")
 
+
+@app.route("/recover", methods = ["GET", "POST"])
+def recover():
+    """
+        Description:    shows recover page on GET and deals with
+                        submitted information on POST.
+    """
+    if request.method == "POST":
+        pass
+    else:
+        pass
+
+
 @app.route("/register", methods = ["GET", "POST"])
 def register():
     """
-        Description:    shows register page on GET
-                        and deals with submitted
-                        information on POST.
+        Description:    shows register page on GET and deals with
+                        submitted information on POST.
     """
     if request.method == "POST":
         pass

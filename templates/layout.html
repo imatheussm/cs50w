@@ -89,8 +89,8 @@
                         </form>
                         <hr class="uk-margin-small" />
                         <ul class="uk-nav uk-dropdown-nav">
-                            <li class="uk-align-right uk-margin-remove"><a href="#">Forgot your password? <strong>Recover it</strong> <span uk-icon="icon: refresh"></span></a></li>
-                            <li class="uk-align-right uk-margin-remove"><a href="#">Not a user? <strong>Register now</strong> <span uk-icon="icon: sign-in"></span></a></li>
+                            <li class="uk-align-right uk-margin-remove"><a href="{{ url_for("recover") }}">Forgot your password? <strong>Recover it</strong> <span uk-icon="icon: refresh"></span></a></li>
+                            <li class="uk-align-right uk-margin-remove"><a href="{{ url_for("register") }}">Not a user? <strong>Register now</strong> <span uk-icon="icon: sign-in"></span></a></li>
                         </ul>
                     </div>
                 </ul>
@@ -145,12 +145,22 @@
                         </form>
                         <hr class="uk-margin-small" />
                         <ul class="uk-nav uk-dropdown-nav">
-                            <li class="uk-align-left uk-margin-remove"><a class="uk-margin-small" href="#">Forgot your password? <strong>Recover it</strong> <span uk-icon="icon: refresh"></span></a></li>
-                            <li class="uk-align-left uk-margin-remove"><a class="uk-margin-small" href="#">Not a user? <strong>Register now</strong> <span uk-icon="icon: sign-in"></a></li>
+                            <li class="uk-align-left uk-margin-remove"><a class="uk-margin-small" href="{{ url_for("recover") }}">Forgot your password? <strong>Recover it</strong> <span uk-icon="icon: refresh"></span></a></li>
+                            <li class="uk-align-left uk-margin-remove"><a class="uk-margin-small" href="{{ url_for("register") }}">Not a user? <strong>Register now</strong> <span uk-icon="icon: sign-in"></a></li>
                         </ul>
                     </div>
-                    <h3>Title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <ul class="uk-nav uk-nav-primary uk-margin-top uk-margin-left">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li class="uk-parent">
+                            <a href="#">Parent</a>
+                            <ul class="uk-nav-sub">
+                                <li class="uk-active"><a href="#">Active</a></li>
+                                <li><a href="#">Item</a></li>
+                                <li><a href="#">Item</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">API</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
